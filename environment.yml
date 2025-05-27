@@ -9,7 +9,7 @@ dependencies:
   - pip
   - pip:
       - autopep8
-      - flake8{%- if cookiecutter.use_pytest == 'y' %}
+      - flake8{%- if cookiecutter.use_pytest == 'y' or cookiecutter.use_pytest == 'yes' %}
       - pytest
       - pytest-cov{%- endif %}
       - "-e ."

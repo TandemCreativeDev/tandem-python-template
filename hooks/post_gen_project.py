@@ -54,7 +54,7 @@ def setup_git_repo():
 
 def remove_pytest_files():
     use_pytest = "{{ cookiecutter.use_pytest }}"
-    if use_pytest.lower() == 'n':
+    if use_pytest.lower() not in ['y', 'yes']:
         env_file = Path('environment.yml')
         if env_file.exists():
             content = env_file.read_text()
