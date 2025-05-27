@@ -36,8 +36,8 @@ pytest
 ## Project Structure
 
 ```
-├── src/             # Code
-{% if cookiecutter.use_pytest == 'y' or cookiecutter.use_pytest == 'yes' -%}├── tests/           # Test files{% endif %}
+├── src/             # Code{% if cookiecutter.use_pytest == 'y' or cookiecutter.use_pytest == 'yes' -%}
+├── tests/           # Test files{% endif %}
 ├── environment.yml  # Conda environment
 ├── setup.cfg        # Tool configurations
 └── pyproject.toml   # Build configuration
@@ -45,8 +45,8 @@ pytest
 
 ## Development
 
-- **Code formatting**: `autopep8 --in-place --recursive src/ {% if cookiecutter.use_pytest == 'y' or cookiecutter.use_pytest == 'yes' -%}tests/{% endif %}`
-- **Linting**: `flake8 src/ {% if cookiecutter.use_pytest == 'y' or cookiecutter.use_pytest == 'yes' -%}tests/{% endif %}`
+- **Code formatting**: `autopep8 --in-place --recursive src/{% if cookiecutter.use_pytest == 'y' or cookiecutter.use_pytest == 'yes' -%}tests/{% endif %}`
+- **Linting**: `flake8 src/{% if cookiecutter.use_pytest == 'y' or cookiecutter.use_pytest == 'yes' -%}tests/{% endif %}`
 {% if cookiecutter.use_pytest == 'y' or cookiecutter.use_pytest == 'yes' -%}
 - **Testing**: `pytest tests/`
 - **Coverage**: `pytest --cov=src`
