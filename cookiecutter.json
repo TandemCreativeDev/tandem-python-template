@@ -1,0 +1,19 @@
+{
+  "project_name": "my-python-project",
+  "author_name": "Your Name",
+  "author_email": "your.email@example.com",
+  "description": "A brief description of the project",
+  "use_pytest": ["y", "n"],
+  "python_version": "3.13.3",
+  "_copy_without_render": [
+    "*.jpg",
+    "*.png",
+    "*.gif",
+    "*.svg",
+    "*.ico",
+    "*.woff",
+    "*.woff2",
+    "*.ttf",
+    "*.eot"
+  ]
+}
