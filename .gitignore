@@ -4,6 +4,7 @@ __pycache__/
 *.py[cod]
 *$py.class
 *.so
+*.pyd
 .Python
 env/
 build/
@@ -22,17 +23,31 @@ var/
 *.egg
 .pytest_cache/
 .coverage
+.coverage.*
 htmlcov/
+.tox/
+.nox/
+.cache/
+.mypy_cache/
+.dmypy.json
+dmypy.json
 
-# PyTorch
+# PyTorch/ML
 *.pt
 *.pth
 *.onnx
-*.csv
 *.pkl
+*.parquet
+*.h5
+*.hdf5
+models/
+checkpoints/
+
+# Data files
+*.csv
+*.xml
 text8
 hn_data
-*.parquet
 
 # Jupyter Notebooks
 .ipynb_checkpoints
@@ -40,14 +55,12 @@ hn_data
 
 # Environments
 .env
+.env.*
 .venv
 venv/
 ENV/
+env/
 conda-env/
-
-# Docker
-.docker/
-docker-compose.override.yml
 
 # IDE specific files
 .idea/
@@ -55,6 +68,8 @@ docker-compose.override.yml
 *.swp
 *.swo
 .DS_Store
+*.sublime-project
+*.sublime-workspace
 
 # Database
 *.db
@@ -65,11 +80,9 @@ postgres-data/
 logs/
 *.log
 
-# Model files and data
-data/
-!data/.gitkeep
-!models/.gitkeep
-saved_models/
+# Documentation
+docs/_build/
+site/
 
 # Streamlit
 secrets.toml
@@ -78,12 +91,19 @@ secrets.toml
 tmp/
 .tmp/
 temp/
+*.tmp
 
-# CI/CD
-.github/workflows/.env
+# OS
+Thumbs.db
+.DS_Store
+.Spotlight-V100
+.Trashes
+ehthumbs.db
 
 # Miscellaneous
-claude-conversations/
 .history/
 .aider*
 wandb/
+*.bak
+*.swp
+*~
