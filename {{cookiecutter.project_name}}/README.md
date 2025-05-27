@@ -39,7 +39,7 @@ pytest
 
 ```
 ├── src/             # Code
-├── tests/           # Test files
+{% if cookiecutter.use_pytest == 'y' or cookiecutter.use_pytest == 'yes' -%} ├── tests/           # Test files
 ├── environment.yml  # Conda environment
 ├── setup.cfg        # Tool configurations
 └── pyproject.toml   # Build configuration
@@ -47,8 +47,8 @@ pytest
 
 ## Development
 
-- **Code formatting**: `autopep8 --in-place --recursive src/ tests/`
-- **Linting**: `flake8 src/ tests/`
+- **Code formatting**: `autopep8 --in-place --recursive src/ {% if cookiecutter.use_pytest == 'y' or cookiecutter.use_pytest == 'yes' -%} tests/`
+- **Linting**: `flake8 src/ {% if cookiecutter.use_pytest == 'y' or cookiecutter.use_pytest == 'yes' -%} tests/`
   {% if cookiecutter.use_pytest == 'y' or cookiecutter.use_pytest == 'yes' -%}
 - **Testing**: `pytest tests/`
 - **Coverage**: `pytest --cov=src`
