@@ -1,4 +1,4 @@
-# {{cookiecutter.project_name}}
+# {{ cookiecutter.project_name.replace('-', ' ').replace('_', ' ').title() }}
 
 {{cookiecutter.description}}
 
