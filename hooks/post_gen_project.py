@@ -67,6 +67,10 @@ def remove_pytest_files():
             ]
             env_file.write_text('\n'.join(filtered_lines))
             print("✓ Removed pytest dependencies from environment.yml")
+        test_dir = Path('tests')
+        if test_dir.exists():
+            shutil.rmtree(test_dir)
+            print("✓ Removed tests directory")
 
 def main():
     print("🚀 Setting up your Python project...")
