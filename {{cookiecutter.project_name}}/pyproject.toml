@@ -3,7 +3,7 @@ requires = ["setuptools>=45", "wheel", "setuptools_scm[toml]>=6.2"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "{{cookiecutter._package_name}}"
+name = "{{cookiecutter.project_name}}"
 description = "{{cookiecutter.description}}"
 authors = [
     {username = "{{cookiecutter.username}}", email = "{{cookiecutter.email}}"}

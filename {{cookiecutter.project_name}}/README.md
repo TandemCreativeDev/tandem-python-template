@@ -24,7 +24,7 @@
 
    ```bash
    conda env create -f environment.yml
-   conda activate {{cookiecutter._package_name}}
+   conda activate {{cookiecutter.project_name}}
    ```
 
 {% if cookiecutter.use_pytest == 'y' or cookiecutter.use_pytest == 'yes' -%} 3. **Run tests**

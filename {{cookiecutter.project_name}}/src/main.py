@@ -1,5 +1,5 @@
 def hello_world():
-    return "Hello from {{cookiecutter._package_name}}!"
+    return "Hello from {{cookiecutter.project_name}}!"
 
 
 if __name__ == "__main__":

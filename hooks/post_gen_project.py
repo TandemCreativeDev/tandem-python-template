@@ -71,7 +71,7 @@ def remove_pytest_files():
 
 def rename_project_directory():
     project_name = "{{ cookiecutter.project_name }}"
-    package_name = "{{ cookiecutter._package_name }}"
+    package_name = "{{ cookiecutter.project_name }}"
     
     if project_name != package_name:
         current_dir = Path.cwd()
@@ -96,9 +96,9 @@ def main():
     
     print("\n✅ Project setup complete!")
     print(f"\nNext steps:")
-    print(f"1. cd {{cookiecutter._package_name}}")
+    print(f"1. cd {{cookiecutter.project_name}}")
     print(f"2. conda env create -f environment.yml")
-    print(f"3. conda activate {{cookiecutter._package_name}}")
+    print(f"3. conda activate {{cookiecutter.project_name}}")
     print(f"4. Start coding!")
 
 

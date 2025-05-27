@@ -1,6 +1,6 @@
 # To create the conda environment, run:
 #   conda env create -f environment.yml
-name: "{{cookiecutter._package_name}}"
+name: "{{cookiecutter.project_name}}"
 channels:
   - defaults
   - conda-forge
