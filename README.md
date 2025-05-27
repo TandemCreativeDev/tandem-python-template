@@ -1,0 +1,70 @@
+# {{cookiecutter.project_name}}
+
+{{cookiecutter.description}}
+
+## Quick Start
+
+1. **Setup environment**
+
+   ```bash
+   conda env create -f environment.yml
+   conda activate {{cookiecutter.package_name}}
+   ```
+
+2. **Install package in development mode**
+   ```bash
+   pip install -e .
+   ```
+
+{% if cookiecutter.use_pytest == 'y' -%} 3. **Run tests**
+
+```bash
+pytest
+```
+
+{% endif %}
+
+## Project Structure
+
+```
+├── src/             # Code
+├── tests/           # Test files
+├── environment.yml  # Conda environment
+├── setup.cfg        # Tool configurations
+└── pyproject.toml   # Build configuration
+```
+
+## Development
+
+- **Code formatting**: `autopep8 --in-place --recursive src/ tests/`
+- **Linting**: `flake8 src/ tests/`
+  {% if cookiecutter.use_pytest == 'y' -%}
+- **Testing**: `pytest tests/`
+- **Coverage**: `pytest --cov=src`
+  {% endif %}
+
+## Git Branch Naming
+
+Follow these conventions:
+
+- `feature/feature-name` - New features
+- `bugfix/bug-description` - Bug fixes
+- `hotfix/critical-fix` - Critical fixes
+- `chore/task-description` - Maintenance tasks
+- `docs/documentation-update` - Documentation changes
+
+## Commit Messages
+
+Use conventional commits:
+
+- `feat: add new feature`
+- `fix: resolve bug`
+- `docs: update documentation`
+- `style: format code`
+- `refactor: restructure code`
+- `test: add tests`
+- `chore: update dependencies`
+
+## Author
+
+**{{cookiecutter.author_name}}** - {{cookiecutter.author_email}}
