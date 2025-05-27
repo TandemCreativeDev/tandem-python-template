@@ -1,11 +1,11 @@
 # To create the conda environment, run:
 #   conda env create -f environment.yml
-name: "{{cookiecutter.project_name}}"
+name: {{cookiecutter.project_name}}
 channels:
   - defaults
   - conda-forge
 dependencies:
-  - "python={{cookiecutter._python_version}}"
+  - python={{cookiecutter._python_version}}
   - pip
   - pip:
       - autopep8
