@@ -1,6 +1,6 @@
 {
   "project_name": "my-python-project",
-  "username": "Github handle",
+  "username": "github handle",
   "email": "your.email@example.com",
   "description": "A brief description of the project",
   "use_pytest": "y",
