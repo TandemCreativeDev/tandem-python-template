@@ -1,5 +1,7 @@
 import subprocess
 import re
+import os
+import shutil
 from pathlib import Path
 
 
@@ -67,19 +69,37 @@ def remove_pytest_files():
             print("✓ Removed pytest dependencies from environment.yml")
 
 
+def rename_project_directory():
+    project_name = "{{ cookiecutter.project_name }}"
+    package_name = "{{ cookiecutter._package_name }}"
+    
+    if project_name != package_name:
+        current_dir = Path.cwd()
+        parent_dir = current_dir.parent
+        new_dir = parent_dir / package_name
+        
+        if new_dir.exists():
+            shutil.rmtree(new_dir)
+        
+        shutil.move(str(current_dir), str(new_dir))
+        os.chdir(new_dir)
+        print(f"✓ Renamed project directory to {package_name}")
+
+
 def main():
     print("🚀 Setting up your Python project...")
     
     update_python_version()
     remove_pytest_files()
     setup_git_repo()
+    rename_project_directory()
     
     print("\n✅ Project setup complete!")
-    print("\nNext steps:")
-    print("1. cd {{cookiecutter._package_name}}")
-    print("2. conda env create -f environment.yml")
-    print("3. conda activate {{cookiecutter._package_name}}")
-    print("4. Start coding!")
+    print(f"\nNext steps:")
+    print(f"1. cd {{cookiecutter._package_name}}")
+    print(f"2. conda env create -f environment.yml")
+    print(f"3. conda activate {{cookiecutter._package_name}}")
+    print(f"4. Start coding!")
 
 
 if __name__ == "__main__":
