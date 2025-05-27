@@ -1,8 +1,15 @@
 # To create the conda environment, run:
 #   conda env create -f environment.yml
-name: project
+name: "{{cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_')}}"
 channels:
   - defaults
   - conda-forge
 dependencies:
-  - python=X.XX.X
+  - "python={{cookiecutter.python_version}}"
+  - pip
+  - pip:
+      - autopep8
+      - flake8{%- if cookiecutter.use_pytest == 'y' %}
+      - pytest
+      - pytest-cov{%- endif %}
+      - "-e ."
