@@ -26,7 +26,6 @@
    conda env create -f environment.yml
    conda activate {{cookiecutter.project_name}}
    ```
-
 {% if cookiecutter.use_pytest == 'y' or cookiecutter.use_pytest == 'yes' -%}
 3. **Run tests**
 
@@ -34,14 +33,11 @@
 pytest
 ```
 {% endif %}
-
 ## Project Structure
 
 ```
 ├── src/             # Code
-{% if cookiecutter.use_pytest == 'y' or cookiecutter.use_pytest == 'yes' -%}
-├── tests/           # Test files
-{% endif %}
+{% if cookiecutter.use_pytest == 'y' or cookiecutter.use_pytest == 'yes' -%}├── tests/           # Test files{% endif %}
 ├── environment.yml  # Conda environment
 ├── setup.cfg        # Tool configurations
 └── pyproject.toml   # Build configuration
@@ -49,13 +45,12 @@ pytest
 
 ## Development
 
-- **Code formatting**: `autopep8 --in-place --recursive src/ {% if cookiecutter.use_pytest == 'y' or cookiecutter.use_pytest == 'yes' -%} tests/ {% endif %}`
-- **Linting**: `flake8 src/ {% if cookiecutter.use_pytest == 'y' or cookiecutter.use_pytest == 'yes' -%} tests/ {% endif %}`
-  {% if cookiecutter.use_pytest == 'y' or cookiecutter.use_pytest == 'yes' -%}
+- **Code formatting**: `autopep8 --in-place --recursive src/ {% if cookiecutter.use_pytest == 'y' or cookiecutter.use_pytest == 'yes' -%}tests/{% endif %}`
+- **Linting**: `flake8 src/ {% if cookiecutter.use_pytest == 'y' or cookiecutter.use_pytest == 'yes' -%}tests/{% endif %}`
+{% if cookiecutter.use_pytest == 'y' or cookiecutter.use_pytest == 'yes' -%}
 - **Testing**: `pytest tests/`
 - **Coverage**: `pytest --cov=src`
-  {% endif %}
-
+{% endif %}
 ## Git Branch Naming
 
 Follow these conventions:
