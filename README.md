@@ -4,19 +4,30 @@
 
 ## Quick Start
 
-1. **Setup environment**
+1. **Clone the repository**:
+
+   - **with https:**
+
+   ```bash
+   git clone https://github.com/{{cookiecutter.username}}/{{cookiecutter.project_name}}.git
+   cd {{cookiecutter.project_name}}
+   ```
+
+   - **with ssh:**
+
+   ```bash
+   git clone git@github.com:{{cookiecutter.username}}/{{cookiecutter.project_name}}.git
+   cd {{cookiecutter.project_name}}
+   ```
+
+2. **Setup environment**
 
    ```bash
    conda env create -f environment.yml
    conda activate {{cookiecutter.package_name}}
    ```
 
-2. **Install package in development mode**
-   ```bash
-   pip install -e .
-   ```
-
-{% if cookiecutter.use_pytest == 'y' -%} 3. **Run tests**
+{% if cookiecutter.use_pytest == 'y' or cookiecutter.use_pytest == 'yes' -%} 3. **Run tests**
 
 ```bash
 pytest
@@ -38,7 +49,7 @@ pytest
 
 - **Code formatting**: `autopep8 --in-place --recursive src/ tests/`
 - **Linting**: `flake8 src/ tests/`
-  {% if cookiecutter.use_pytest == 'y' -%}
+  {% if cookiecutter.use_pytest == 'y' or cookiecutter.use_pytest == 'yes' -%}
 - **Testing**: `pytest tests/`
 - **Coverage**: `pytest --cov=src`
   {% endif %}
@@ -67,4 +78,4 @@ Use conventional commits:
 
 ## Author
 
-**{{cookiecutter.author_name}}** - {{cookiecutter.author_email}}
+[**{{cookiecutter.username}}**](https://github.com/{{cookiecutter.username}}) - {{cookiecutter.email}}
