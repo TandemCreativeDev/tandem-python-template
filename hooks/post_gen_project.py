@@ -3,7 +3,7 @@ import re
 from pathlib import Path
 
 
-def get_latest_python_version():
+def get_latest__python_version():
     try:
         result = subprocess.run([
             'python3', '-c', 
@@ -21,8 +21,8 @@ def get_latest_python_version():
             return "3.11.0"
 
 
-def update_python_version():
-    latest_version = get_latest_python_version()
+def update__python_version():
+    latest_version = get_latest__python_version()
     
     env_file = Path('environment.yml')
     if env_file.exists():
@@ -70,7 +70,7 @@ def remove_pytest_files():
 def main():
     print("🚀 Setting up your Python project...")
     
-    update_python_version()
+    update__python_version()
     remove_pytest_files()
     setup_git_repo()
     

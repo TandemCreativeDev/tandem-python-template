@@ -5,7 +5,7 @@ channels:
   - defaults
   - conda-forge
 dependencies:
-  - "python={{cookiecutter.python_version}}"
+  - "python={{cookiecutter._python_version}}"
   - pip
   - pip:
       - autopep8
