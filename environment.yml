@@ -1,0 +1,8 @@
+# To create the conda environment, run:
+#   conda env create -f environment.yml
+name: project
+channels:
+  - defaults
+  - conda-forge
+dependencies:
+  - python=X.XX.X
