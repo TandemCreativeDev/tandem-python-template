@@ -76,9 +76,9 @@ def main():
     
     print("\n✅ Project setup complete!")
     print("\nNext steps:")
-    print("1. cd {{cookiecutter.package_name}}")
+    print("1. cd {{cookiecutter._package_name}}")
     print("2. conda env create -f environment.yml")
-    print("3. conda activate {{cookiecutter.package_name}}")
+    print("3. conda activate {{cookiecutter._package_name}}")
     print("4. Start coding!")
 
 
